@@ -2,8 +2,6 @@ CC ?= gcc
 CFLAGS ?= -Wall -O2
 LDFLAGS ?=
 
-VPATH=src
-
 objects := builtin.o main.o parser.o cmd.o
 
 .PHONY: clean
