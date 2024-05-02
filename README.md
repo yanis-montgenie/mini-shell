@@ -10,8 +10,6 @@ la gestion des commandes intégrées, la manipulation des redirections, la gesti
 
 Le projet est organisé selon la structure suivante :
 
-- src/: Contient les fichiers source du projet.
-- doc/: Contient la documentation du projet.
 - exemples: Fichier contenant des exemples de commandes testées avec succès dans le mini-shell.
 - Makefile: Fichier permettant de compiler le projet.
 
