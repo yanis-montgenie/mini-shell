@@ -1,0 +1,57 @@
+//Les commandes intégrées
+
+cd ../ ; tree
+cd ../ ; ls ; 
+exit 
+
+//Les variables d’environnement 
+
+echo $PWD
+export VAR=variable
+echo $VAR
+unset VAR
+printenv VAR
+
+//Commandes simples :
+
+//en "avant plan"
+
+clear
+ls ; echo bonjour ;
+rm doc/file.error
+touch doc/file.error
+
+//en "arrière plan" 
+
+ls & echo salut
+
+ls ; echo bonjour ;
+
+//Rediriger les entrées sorties des commandes 
+//Nous avons volontairement manqué ou ajouté des espaces pour prouver le bon fonctionnement des fonctions qui prépare la commande
+
+ls >doc/file.output ; cat doc/file.output;
+cat doc/file.error;
+sort -u < doc/file.input
+echo chaine >> doc/file.appout;cat doc/file.appout
+ls >&2
+echo   abc  | tr a   b
+
+//Composition de toutes ces redirections
+
+ls > doc/file.output || ls fichierInexistant 2> doc/file.error
+ls > doc/file.output && ls fichierInexistant 2> doc/file.error
+echo abc | tr a b > doc/fichier.txt ; cat doc/fichier.txt ; echo abc >> doc/fichier.txt ; sort -u < doc/fichier.txt ;
+
+//Gérer les opérateurs 
+
+ls fichierinexistant && ls
+ls && echo test
+echo test && ls fichierinexistant && echo chaine
+ls fichierinexistant || ls
+echo test || tree
+ls fichierinexistant || ls fichierinexistant || echo chaine
+! ls fichierinexistant || ls
+! echo test || tree
+! ls fichierinexistant && ls
+! echo test && tree
